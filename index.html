@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Presupuesto - PixelLab</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="borde-izquierdo">
+  <div class="contenedor">
+    <form id="formularioPresupuesto">
+      <div class="cabecera">
+        <h1>Calculadora de Presupuesto de Marketing</h1>
+        <p>Agencia PixelLab</p>
+      </div>
+
+      <hr class="separador">
+
+      <div class="grupo-input">
+        <label for="cliente">Nombre del cliente</label>
+        <input type="text" id="cliente" placeholder="Ej: Juan Pérez" required>
+      </div>
+
+      <div class="grupo-input">
+        <label for="presupuesto">Presupuesto mensual total (CLP)</label>
+        <input type="number" id="presupuesto" placeholder="Ej: 1000000" min="1" required>
+      </div>
+
+      <div class="grilla-instrumentos">
+        <div class="grilla-cabecera">
+          <div class="col-nombre">CANAL</div>
+          <div class="col-numero">% ASIGNADO</div>
+          <div class="col-numero">CPC PROMEDIO</div>
+        </div>
+
+        <div class="grilla-fila">
+          <div class="col-nombre">
+            <input type="text" id="canal1" value="Google Ads" placeholder="Nombre del canal">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="porc1" class="input-porcentaje" placeholder="%" min="0" max="100">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="cpc1" class="input-cpc" placeholder="$" min="1">
+          </div>
+        </div>
+
+        <div class="grilla-fila">
+          <div class="col-nombre">
+            <input type="text" id="canal2" value="Facebook Ads" placeholder="Nombre del canal">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="porc2" class="input-porcentaje" placeholder="%" min="0" max="100">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="cpc2" class="input-cpc" placeholder="$" min="1">
+          </div>
+        </div>
+
+        <div class="grilla-fila">
+          <div class="col-nombre">
+            <input type="text" id="canal3" value="Instagram Ads" placeholder="Nombre del canal">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="porc3" class="input-porcentaje" placeholder="%" min="0" max="100">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="cpc3" class="input-cpc" placeholder="$" min="1">
+          </div>
+        </div>
+
+        <div class="grilla-fila">
+          <div class="col-nombre">
+            <input type="text" id="canal4" value="TikTok Ads" placeholder="Nombre del canal">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="porc4" class="input-porcentaje" placeholder="%" min="0" max="100">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="cpc4" class="input-cpc" placeholder="$" min="1">
+          </div>
+        </div>
+
+        <div class="grilla-fila">
+          <div class="col-nombre">
+            <input type="text" id="canal5" value="Email Marketing" placeholder="Nombre del canal">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="porc5" class="input-porcentaje" placeholder="%" min="0" max="100">
+          </div>
+          <div class="col-numero">
+            <input type="number" id="cpc5" class="input-cpc" placeholder="$" min="1">
+          </div>
+        </div>
+      </div>
+
+      <div class="resumen-suma">
+        <span>Suma actual de asignaciones:</span>
+        <span id="texto-suma" class="texto-rojo">0%</span>
+      </div>
+
+      <button type="button" id="btnCalcular">Calcular distribución</button>
+
+      <div id="cajaErrores" class="oculto">
+        <p class="titulo-error">Corrige los siguientes errores:</p>
+        <ul id="listaErrores"></ul>
+      </div>
+
+      <div id="cajaResultados" class="oculto">
+        <h3 class="titulo-resultados">Distribución y Proyección</h3>
+        <div id="contenidoResultados"></div>
+        <div class="total-clics">
+          <strong>Total de clics estimados del mes:</strong> <span id="totalClicsMes">0</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
