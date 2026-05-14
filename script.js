@@ -102,7 +102,7 @@ btnCalcular.addEventListener("click", function() {
   cajaErrores.classList.add("oculto");
   let totalClics = 0;
 
-  // 4. Calcular Montos y Clics (entero)
+
   canales.forEach(canal => {
     canal.monto = presupuesto * (canal.porcentaje / 100);
     canal.clics = Math.round(canal.monto / canal.cpc);
